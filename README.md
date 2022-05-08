@@ -47,7 +47,7 @@ $ go install github.com/swaggo/swag/cmd/swag@latest
 
 #install go migrate
 # if failed, please check( https://github.com/golang-migrate/migrate/blob/master/cmd/migrate/README.md ) for your device
-$ github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+$ go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
 #move to directory
 $ cd workspace
