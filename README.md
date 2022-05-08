@@ -43,23 +43,23 @@ Here is the steps to run it with `docker-compose`
 
 ```bash
 # install swagger cli
-$ go get -u github.com/swaggo/swag/cmd/swag
+$ go install github.com/swaggo/swag/cmd/swag@latest
 
 #install go migrate
 # if failed, please check( https://github.com/golang-migrate/migrate/blob/master/cmd/migrate/README.md ) for your device
-$ go get -u -d github.com/golang-migrate/migrate/cmd/migrate
+$ github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
 #move to directory
 $ cd workspace
 
 # Clone
-$ git clone https://github.com/khalidalhabibie/GoArticle.git
+$ git clone git@github.com:khalidalhabibie/GoArticle.git
 
 #move to project
 $ cd GoArticle
 
-# rename file .env.example
-$ mv .env.example .env
+# rename file env.example
+$ mv env.example .env
 
 # Build the docker image first
 $ make build
