@@ -37,10 +37,20 @@ test: clean
 
 
 build:
+	@echo build ....
 	sudo docker-compose build
 
 run:
-	sudo docker-compose start
+	@echo run ....
+	sudo docker-compose up
+
+stop:
+	@echo stop ....
+	sudo docker-compose stop
+
+remove: 
+	@echo remove ....
+	sudo docker-compose rm
 	
 
 

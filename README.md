@@ -45,7 +45,6 @@ Here is the steps to run it with `docker-compose`
 # install swagger cli
 $ go get -u github.com/swaggo/swag/cmd/swag
 
-
 #install go migrate
 # if failed, please check( https://github.com/golang-migrate/migrate/blob/master/cmd/migrate/README.md ) for your device
 $ go get -u -d github.com/golang-migrate/migrate/cmd/migrate
@@ -62,7 +61,6 @@ $ cd GoArticle
 # rename file .env.example
 $ mv .env.example .env
 
-
 # Build the docker image first
 $ make build
 
@@ -70,10 +68,13 @@ $ make build
 $ make run
 
 # check if the containers are running
-$ docker ps
+$ sudo docker ps
 
 # migration database and seed data
 $ make migrate.up
+
+# Run the application
+$ make stop
 
 ```
 
