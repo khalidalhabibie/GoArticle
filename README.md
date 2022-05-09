@@ -95,7 +95,7 @@ $ sudo docker ps
 # migration database and seed data
 $ make migrate.up
 
-# Run the application
+# Stop the application
 $ make stop
 
 ```
