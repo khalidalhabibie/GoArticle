@@ -2,7 +2,7 @@
 
 Article management backend built with Go, Fiber, PostgreSQL, Redis, and Clean Architecture.
 
-This project was created to explore how a content-oriented backend service can be structured with clear separation of concerns, local observability tooling, and production-style development practices.
+This project was built to explore how a content-oriented backend service can be structured with clear separation of concerns, local observability tooling, and production-style development practices.
 
 ## What this project does
 
@@ -33,14 +33,9 @@ GoArticle provides a REST API for managing articles, including article creation 
 
 ## Architecture
 
-This project follows a Clean Architecture approach, with responsibilities separated into:
+This project follows a Clean Architecture approach, separating responsibilities across delivery, use case, repository, and model layers to keep business logic isolated from infrastructure concerns.
 
-- Models
-- Repository
-- Use Case
-- Delivery
-
-The goal is to keep business rules isolated from frameworks, storage details, and external services, making the codebase easier to test and evolve.
+![Clean Architecture](clean-arch.png)
 
 ## Local Setup
 
@@ -50,17 +45,65 @@ The goal is to keep business rules isolated from frameworks, storage details, an
 - Docker
 - Docker Compose
 - golang-migrate CLI
-- swag CLI (optional, for regenerating Swagger docs)
-- mockery CLI (optional, for interface mocking)
+- swag CLI
+- mockery CLI
 
 ### Run locally
 
-```bash
-git clone git@github.com:khalidalhabibie/GoArticle.git
-cd GoArticle
+    git clone git@github.com:khalidalhabibie/GoArticle.git
+    cd GoArticle
+    mv env.example .env
+    make build
+    make run
+    make migrate.up
 
-mv env.example .env
+### Stop the application
 
-make build
-make run
-make migrate.up
+    make stop
+
+## Local Services
+
+### Swagger Documentation
+
+    http://localhost:8081/swagger/index.html
+
+### Prometheus
+
+    http://localhost:9090
+
+### Grafana
+
+    http://localhost:3000
+
+Grafana default credentials:
+
+    username: admin
+    password: admin
+
+## Why this repo matters
+
+Although this is a smaller backend project, it reflects several engineering practices that matter in real services:
+
+- layered application design
+- cache integration
+- local observability
+- containerized development
+- API documentation
+- separation of business logic and infrastructure concerns
+
+## Current Status
+
+This repository is archived and kept as a reference project from an earlier stage of development.
+
+## Possible Improvements
+
+- add authentication and authorization
+- improve test coverage
+- add update and delete article flows
+- add search and filtering support
+- improve CI workflow
+- introduce request validation and rate limiting
+
+## About
+
+Article management backend in Go with clean architecture, PostgreSQL, Redis caching, Swagger, and observability.
